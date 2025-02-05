@@ -7,4 +7,8 @@ public class JoueurIA {
         cerveau = new Cerveau(TailleEntrée, TailleSortie);
         recompense = 0;
     }
+
+    public String getRecompense() {
+        return Integer.toString(recompense);
+    }
 }
