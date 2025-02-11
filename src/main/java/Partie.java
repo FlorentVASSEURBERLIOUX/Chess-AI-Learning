@@ -27,8 +27,8 @@ public String getPGNPartie() {
                  "[Site \"https://github.com/FlorentVASSEURBERLIOUX\"]\n" +
                  "[Date \"0001.01.01\"]\n" +
                  "[Round \"?\"]\n" +
-                 "[White \"Gen" + joueurBlanc.getNGeneration() + " N°" + getClassementJoueur(joueurBlanc) + "\"]\n" +
-                 "[Black \"Gen" + joueurNoir.getNGeneration() + " N°" + getClassementJoueur(joueurNoir) + "\"]\n" +
+                 "[White \"Gen" + generation.getNGeneration() + " N°" + getClassementJoueur(joueurBlanc) + "\"]\n" +
+                 "[Black \"Gen" + generation.getNGeneration() + " N°" + getClassementJoueur(joueurNoir) + "\"]\n" +
                  "[Result \"1/2-1/2\"]\n" +
                  "[TimeControl \"600\"]\n" +
                  "[WhiteElo \"" + joueurBlanc.getRecompense() + " pts\"]\n" +
