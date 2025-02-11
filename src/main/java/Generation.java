@@ -20,4 +20,7 @@ public class Generation {
         return classementJoueurs;
     }
 
+    public int getNGeneration(){
+        return nGeneration;
+    }
 }
