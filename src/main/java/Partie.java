@@ -22,8 +22,8 @@ public class Partie {
         historique.add(coup);
     }
 
-public String getPNGPartie() {
-    String PNG = "[Event \"Live Chess\"]\n" +
+public String getPGNPartie() {
+    String PGN = "[Event \"Live Chess\"]\n" +
                  "[Site \"https://github.com/FlorentVASSEURBERLIOUX\"]\n" +
                  "[Date \"0001.01.01\"]\n" +
                  "[Round \"?\"]\n" +
@@ -41,16 +41,29 @@ public String getPNGPartie() {
     int coupNum = 1;
     for (int i = 0; i < historique.size(); i++) {
         if (i % 2 == 0) {
-            PNG += coupNum + ". ";
+            PGN += coupNum + ". ";
             coupNum++;
         }
-        PNG += historique.get(i).toString() + " ";
+        PGN += historique.get(i).toString() + " ";
     }
-    PNG += "1/2-1/2\n";  
-    return PNG;
+    PGN += "1/2-1/2\n";  
+    return PGN;
 }
 
     public int getClassementJoueur(JoueurIA joueur) {
         return generation.getClassementJoueurs().indexOf(joueur) + 1;
+    }
+
+    public void sauvegarderPGN() {
+        File fichier = new File("../save/Gen" + generation.getNumero() + ".pgn");
+        
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(fichier));
+            writer.write(getPGNPartie());
+            writer.close();
+            
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+        }
     }
 }
